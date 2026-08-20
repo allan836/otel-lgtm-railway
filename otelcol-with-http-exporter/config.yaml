@@ -11,7 +11,9 @@ processors:
 
 exporters:
   otlphttp/openobserve:
-    endpoint: "${env:OPENOBSERVE_ENDPOINT}"
+    traces_endpoint: "${env:OPENOBSERVE_ENDPOINT}/v1/traces"
+    metrics_endpoint: "${env:OPENOBSERVE_ENDPOINT}/v1/metrics"
+    logs_endpoint: "${env:OPENOBSERVE_ENDPOINT}/v1/logs"
     headers:
       Authorization: "${env:OPENOBSERVE_AUTH}"
       stream-name: "default"
